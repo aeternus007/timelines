@@ -1,7 +1,17 @@
 #!/usr/bin/env python3
-from time import sleep
+import glob
+from os import path, remove
 
-print("started")
-sleep(2)
-print("this is the file for updating")
-sleep(5)
+def filter_files(filename):
+    if "json" in filename:
+        return False
+    if "update" in filename:
+        return False
+    
+    return True
+
+base_path = path.split(__file__)[0]
+for file in filter(filter_files, glob.glob(path.join(base_path, "**", "*"), recursive=True)):
+    print(file)
+
+    # remove(file)

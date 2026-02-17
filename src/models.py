@@ -3,4 +3,6 @@ class Event:
     def __init__(self):
         pass
 
-class
+class Period:
+    def __init__(self):
+        pass

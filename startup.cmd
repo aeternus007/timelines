@@ -1,1 +1,1 @@
-start python %CD%\update.py && start python %CD%\src\server.py && start python %CD%\src\client.py
+start python %CD%\initialze.py
