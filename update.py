@@ -27,7 +27,9 @@ if version != version_online:
         print(f"{file} is deleted")
 
     for file in files:
-        filename = path.join(base_path, path.split(file)[-1])
+        folder = file.split("/")[-2]
+        if folder != "main":
+            filename = path.join(base_path, folder, path.split(file)[-1])
         print(f"{filename} is downloading")
 
         with open(filename, "w") as destination:
