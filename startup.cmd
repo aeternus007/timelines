@@ -1,1 +1,1 @@
-start python %~dp0initialze.py
+start python %~dp0initialize.py
