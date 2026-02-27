@@ -3,6 +3,7 @@ import glob
 from json import loads
 from os import path, remove
 from requests import get
+from time import sleep
 
 base_path = path.split(__file__)[0]
 version = glob.glob(path.join(base_path, "version_*"))[0].split("_")[-1]
@@ -32,3 +33,5 @@ if version != version_online:
         with open(filename, "w") as destination:
             destination.write(get(file).text)
             print(f"{destination} is done")
+
+        sleep(2)
