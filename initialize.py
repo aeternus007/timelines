@@ -11,3 +11,4 @@ with open(path.join(base_path, "startup.cmd"), "w") as startup:
 
 remove(__file__)
 remove(path.join(base_path, "requirements.txt"))
+remove(path.join(base_path, "files.json"))

@@ -28,12 +28,8 @@ if version != version_online:
             print(f"{file} is deleted")
 
     for file in files:
-        folder = file.split("/")[-2]
-        if folder != "main":
-            filename = path.join(base_path, folder, path.split(file)[-1])
-        
-        else:
-            filename = path.join(base_path, path.split(file)[-1])
+        filename = file.split("main/")[-1]
+        filename = path.join(base_path, *filename.split("/"))
 
         print(f"{filename} is downloading")
 
@@ -41,8 +37,6 @@ if version != version_online:
             destination.write(get(file).text)
 
         print(f"{filename} is done")
-
-        # sleep(1)
 
 else:
     print("Already up to date!")
