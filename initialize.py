@@ -10,3 +10,4 @@ with open(path.join(base_path, "startup.cmd"), "w") as startup:
     startup.write(r"start python %~dp0update.py && start python %~dp0src\server.py && start python %~dp0src\client.py")
 
 remove(__file__)
+remove(path.join(base_path, "requirements.txt"))

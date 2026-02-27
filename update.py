@@ -23,13 +23,18 @@ def filter_files(filename):
 if version != version_online:
     print(f"Update from {version} --> {version_online}")
     for file in filter(filter_files, glob.glob(path.join(base_path, "**", "*"), recursive=True)):
-        remove(file)
-        print(f"{file} is deleted")
+        if path.isfile(file):
+            remove(file)
+            print(f"{file} is deleted")
 
     for file in files:
         folder = file.split("/")[-2]
         if folder != "main":
             filename = path.join(base_path, folder, path.split(file)[-1])
+        
+        else:
+            filename = path.join(base_path, path.split(file)[-1])
+
         print(f"{filename} is downloading")
 
         with open(filename, "w") as destination:
