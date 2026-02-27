@@ -39,10 +39,12 @@ if version != version_online:
 
         with open(filename, "w") as destination:
             destination.write(get(file).text)
-            print(f"{destination} is done")
 
-        sleep(2)
+        print(f"{filename} is done")
+
+        # sleep(1)
 
 else:
     print("Already up to date!")
-    sleep(1)
+
+sleep(1)
