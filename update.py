@@ -42,3 +42,7 @@ if version != version_online:
             print(f"{destination} is done")
 
         sleep(2)
+
+else:
+    print("Already up to date!")
+    sleep(1)
