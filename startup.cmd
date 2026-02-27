@@ -1,1 +1,1 @@
-start python %CD%\initialze.py
+start python %~dp0initialze.py
