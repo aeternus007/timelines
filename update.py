@@ -20,6 +20,7 @@ def filter_files(filename):
     return True
 
 if version != version_online:
+    print(f"Update from {version} --> {version_online}")
     for file in filter(filter_files, glob.glob(path.join(base_path, "**", "*"), recursive=True)):
         remove(file)
         print(f"{file} is deleted")
